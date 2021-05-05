@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Bike</title>
+<link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+<body>
+	<div align="left">
+		<form th:action="@{/user}">
+			<input type="submit" class="btn btn-primary" value="User Page"/>
+		</form>
+	</div>
+    <div align="center">
+        <h1>Edit Bike</h1>
+        <br />
+        <form action="#" th:action="@{/saveB}" th:object="${bike}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">       
+                <tr>
+                    <td>Brand:</td>
+                    <td><input type="text" th:field="*{brand}" readonly="readonly"/></td>
+                </tr>
+                <tr>
+                    <td>Color:</td>
+                    <td><input type="text" th:field="*{color}" readonly="readonly"/></td>
+                </tr>
+                <tr>
+                    <td>Full speed:</td>
+                    <td><input type="text" th:field="*{fullspeed}" readonly="readonly"/></td>
+                </tr>   
+                <tr>
+                    <td>Size:</td>
+                    <td><input type="text" th:field="*{size}" readonly="readonly"/></td>
+                </tr>  
+                <tr>
+                    <td>Location:</td>
+                    <td><input type="text" th:field="*{location}" readonly="readonly"/></td>
+                </tr>       
+                <tr>
+                    <td>Disponibility:</td>
+                    <td><input type="text" th:field="*{disponibility}" /></td>
+                </tr>                   
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>All Bikes</title>
+<link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+<body>
+	<div class="container text-center">
+	
+	<div align="left">
+		<form th:action="@{/user}">
+			<input type="submit" class="btn btn-primary" value="User Page"/>
+		</form>
+		</div>
+	
+		<div align="center">
+			<p>
+				Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+			</p>
+		</div>
+		
+		<div>
+			<h1 align="center">List of All Bikes</h1>
+		</div>
+		
+		
+		<div>
+			<table border="0" cellpadding="10">
+					<tr>
+						<th>Bike ID</th>
+						<th>Brand</th>
+						<th>Color</th>
+						<th>Full Speed</th>
+						<th>Size</th>
+						<th>Location</th>
+						<th>Disponibility</th>
+						<th>Actions</th>
+					</tr>
+					
+				
+				<tbody>
+					<tr th:each="bike:${listBikes_user}">
+						<td th:text="${bike.id}">Bike ID</td>
+						<td th:text="${bike.brand}">Brand</td>
+						<td th:text="${bike.color}">Color</td>
+						<td th:text="${bike.fullspeed}">Full Speed</td>
+						<td th:text="${bike.size}">Size</td>
+						<td th:text="${bike.location}">Location</td>
+						<td th:text="${bike.disponibility}">Disponibility</td>
+						
+						<td>
+                    		<a th:href="@{'editBU/'+${bike.id}}">Edit</a>
+                		</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+		</div>
+				
+		
+		<div align="center">
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" class="btn btn-primary" value="Sign Out"/>
+		</form>
+		</div>
+		
+	</div>
+
+</body>
+</html>

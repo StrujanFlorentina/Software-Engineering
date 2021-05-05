@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Page</title>
+
+<link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+<body>	
+	<header>
+		<div class="container text-center">	
+			<img src="https://cdn.dribbble.com/users/27903/screenshots/4207049/bike.png?compress=1&resize=400x300" alt="bike" width="80" height="60">
+			
+			<nav>
+				<ul>
+					<li><a th:href="@{/list_bikes_user}">List All Bikes</a></li>
+					<li><a th:href="@{/register}">Register</a></li>
+					<li><a th:href="@{/login}">Login</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div align="left">
+		<form th:action="@{/index}">
+			<input type="submit" class="btn btn-primary" value="Welcome Page"/>
+		</form>
+	</div>
+</body>
+</html>

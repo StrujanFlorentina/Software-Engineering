@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>All Users</title>
+<link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+<body>
+	<div class="container text-center">
+	
+	<div align="left">
+		<form th:action="@{/admin}">
+			<input type="submit" class="btn btn-primary" value="Admin Page"/>
+		</form>
+	</div>
+		
+	<div align="center">
+			
+				<p>
+					Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+				</p>
+			
+		</div>
+		
+		<div>
+			<h1 align="center">List of All Users</h1>
+		</div>
+		
+		<div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th>User ID</th>
+						<th>E-mail</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Location</th>
+						<th>Phone</th>
+						<th>Payment method</th>
+						<th>Action</th>
+					</tr>
+					
+				</thead>
+				
+				<tbody>
+					<tr th:each="user:${listUsers}">
+						<td th:text="${user.id}">User ID</td>
+						<td th:text="${user.email}">E-mail</td>
+						<td th:text="${user.firstName}">First Name</td>
+						<td th:text="${user.lastName}">Last Name</td>
+						<td th:text="${user.location}">Location</td>
+						<td th:text="${user.phoneNumber}">Phone</td>
+						<td th:text="${user.payment}">Payment</td>
+						<td>
+                    		<a th:href="@{'/deleteU/'+${user.id}}">Delete</a>
+                		</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+		</div>
+		
+		
+			
+	
+		<div align="center">
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" class="btn btn-primary" value="Sign Out"/>
+		</form>
+		</div>
+	</div>
+
+</body>
+</html>

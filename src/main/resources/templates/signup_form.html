@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+<link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+<body>
+	<div class="container text-center">
+		<div align="left">
+			<form th:action="@{/user}">
+				<input type="submit" class="btn btn-primary" value="User Page"/>
+			</form>
+		</div>
+		<div>
+			<h1 align="center">User Registration - Sign Up</h1>
+			<br>
+		</div>
+		
+		<div>
+			<form th:action="@{/process_register}" method="post"
+				style="max-width: 600px;margin:0 auto;"
+				th:object="${user}">
+				
+				
+				
+				<div>
+					<div>
+						<label>First Name </label>
+						<div>
+							<input type="text" th:field="*{firstName}" required >
+						</div>
+					
+					</div>
+					
+					<div>
+						<label>Last Name </label>
+						<div>
+							<input type="text" th:field="*{lastName}" required >
+						</div>
+					
+					</div>
+					
+					<div>
+						<label>E-mail </label>
+						<div>
+							<input type="text" th:field="*{email}" required >
+						</div>
+					
+					</div>
+					<div>
+						<label>Phone</label>
+						<div>
+							<input type="text" th:field="*{phoneNumber}" required >
+						</div>
+					
+					</div>
+					
+					<div>
+						<label>Password</label>
+						<div>
+							<input type="password" th:field="*{password}" required >
+						</div>
+						<br>
+					
+					</div>
+					
+					<div>
+						<label>Location</label>
+						<div>
+							<input type="text" th:field="*{location}" required >
+						</div>
+						<br>
+					
+					</div>
+					
+					<div>
+						<label>Payment method</label>
+						<div>
+							<input type="radio" id="card" name="pay" value="card">
+							<label for="card">Credit Card</label><br>
+							<input type="radio" id="cash" name="pay" value="cash">
+							<label for="card">Cash</label><br>
+						</div>
+					
+					</div>
+					
+					<br><br>
+				
+					
+					<div align="center">
+						<input type="submit" class="btn btn-primary" value="Sign Up"/>
+					</div>
+					
+				</div>
+				
+			</form>
+		</div>
+	
+	</div>
+
+</body>
+</html>

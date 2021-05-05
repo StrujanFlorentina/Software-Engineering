@@ -1,0 +1,185 @@
+@charset "ISO-8859-1";
+
+body
+{
+	margin:0;
+	background: #808080;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+	background-image: url("https://in60seconds.ams3.digitaloceanspaces.com/www.in60seconds.nl/uploads/sites/2/2015/09/project-shimano.jpeg");
+}
+
+.container
+{
+	width: 80%;
+	margin: 0 auto;
+}
+
+header
+{
+	background: #55d6aa;
+}
+
+header::after
+{
+	content: '';
+	display:table;
+	clear:both;
+}
+
+h1
+{
+	color: #444;
+}
+
+h2
+{
+	color: #444;
+}
+
+
+h3
+{
+	color: #444;
+}
+
+h4
+{
+	color: #444;
+}
+
+
+
+nav
+{
+	float:right;
+}
+
+nav ul
+{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+
+nav li
+{
+	display: inline-block;
+	margin-left:70px;
+	padding-top:23px;
+	position:relative;
+	
+}
+
+nav a
+{
+	color: #444;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size:14px;
+	
+}
+
+nav a:hover
+{
+	color:#000;
+}
+
+nav a::before
+{
+	content:'';
+	diplay: block;
+	height: 5px;
+	width:100%;
+	background-color:#444;
+	
+	position: absolute;
+	top:0;
+	width: 0%;
+	
+	transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before
+{
+	width:100%;
+}
+
+table
+{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
+p
+{
+	color: #55d6aa;
+}
+
+input[type=submit]
+{
+	  background-color: #55d6aa;
+	  border: none;
+	  color: white;
+	  padding: 8px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 15px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	  border-radius: 50%;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=password]:focus {
+  border: 3px solid #555;
+}
+
+
+
+
+
+
+
+
+
